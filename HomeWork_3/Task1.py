@@ -14,10 +14,11 @@ os.system('cls')
 
 n,k = int(input('Введите кол-во элементов в списке = > ')), int(input('Введите число которое нужно найти = > '))
 
-list_1 = [n]
+#list_1 = []
+#for i in range (n):
+#    list_1.append(random.randint(0, 10))
 
-for i in range (n):
-    list_1 = [random.randint(0, 10) for _ in range (n)]
+list_1 = [random.randint(0, 10) for _ in range (n)]
 
 print(*list_1, sep=", ")
 num = 0
