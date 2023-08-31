@@ -14,10 +14,11 @@ os.system('cls')
 n = int(input('Введите количесвто монеток на столе = > '))
 heads = 0
 tails = 0
-array = [n]
+array = []
 
-for i in range (n):
-    array = [random.randint(0, 1) for _ in range (n)]
+for i in range(n):
+    array.append(random.randint(0, 1))
+#array = [random.randint(0, 1) for _ in range (n)]
 
 print(*array, sep = ", ")
 
