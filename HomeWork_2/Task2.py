@@ -14,6 +14,7 @@ y = 0
 summa = int(input('Сумма двух натуральных чисел = '))
 product = int(input('Произведение двух натуральных чисел = '))
 # решение задачи сводиться к решению квадратных уравнений x*x -summa*x + product = 0, y*y - summa*y + product = 0
+"""
 d = (-summa)*(-summa) - 4 * product     # для решения потребуется дискриминант
 
 if d >= 0:                   # если d = 0, то x = y, если d > 0, x =! y. При отрицательном значении решения нет
@@ -22,3 +23,10 @@ if d >= 0:                   # если d = 0, то x = y, если d > 0, x =! 
     print(f"Задуманные числа : {x} и {y}")
 else:
     print("Для введенных значений нет решений")
+"""
+for x in range (product):
+    for y in range (product):
+        if x + y == summa and x*y == product:
+            print(f"Задуманные числа : {x} и {y}")
+        y = y + 1
+    x = x + 1

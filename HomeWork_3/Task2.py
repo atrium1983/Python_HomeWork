@@ -12,10 +12,7 @@ os.system('cls')
 
 n,k = int(input('Введите кол-во элементов = > ')), int(input('Введите число к которому нужно найти ближайшее по значению в списке = > '))
 
-list_1 = [n]
-
-for i in range (n):
-    list_1 = [random.randint(0, 10) for _ in range (n)]
+list_1 = [random.randint(0, 10) for _ in range (n)]
 
 print(*list_1, sep=", ")
 
