@@ -23,38 +23,33 @@ max = 0
 
 for i in range(n):
     sum = list_1[i-1] + list_1[i] + list_1[(i+1)-n]
-    if i >= 0 and i < n-1 and sum > max:
-        max = sum
-    elif i == n-1 and sum > max:
+    if sum > max:
         max = sum
 print(max)
 
 # 2.Решение через условия и поиск максимального значения в проверке этого условия (34 шага) - 
 # формула для суммы не унирвесальна...(скорость 0,0165)
-"""
-for i in range(n):
-    if i == 0 and ((list_1[n-1] + list_1[i] + list_1[i+1]) > max):
-        max = list_1[n-1] + list_1[i] + list_1[i+1]
-    elif i >=1 and i < n-1 and ((list_1[i-1] + list_1[i] + list_1[i+1]) > max):
-        max = list_1[i-1] + list_1[i] + list_1[i+1]
-    elif i == n-1 and ((list_1[i-1] + list_1[i] + list_1[0]) > max):
-        max = list_1[i-1] + list_1[i] + list_1[0]
-        
-print(max)
-"""
+
+# for i in range(n):
+#     if i == 0 and ((list_1[n-1] + list_1[i] + list_1[i+1]) > max):
+#         max = list_1[n-1] + list_1[i] + list_1[i+1]
+#     elif i >=1 and i < n-1 and ((list_1[i-1] + list_1[i] + list_1[i+1]) > max):
+#         max = list_1[i-1] + list_1[i] + list_1[i+1]
+#     elif i == n-1 and ((list_1[i-1] + list_1[i] + list_1[0]) > max):
+#         max = list_1[i-1] + list_1[i] + list_1[0]
+# print(max)
+
 
 # 3. Решение через дополнительный список с максимальными суммами (38 шагов) (скорость 0,0094)
-"""
-sum = list()
-for i in range(n):
-    if i == 0:
-        sum.append(list_1[n-1] + list_1[i] + list_1[i+1])
-    elif i >=1 and i < n-1:
-        sum.append(list_1[i-1] + list_1[i] + list_1[i+1])
-    elif i == n-1:
-        sum.append(list_1[i-1] + list_1[i] + list_1[0])
 
-print(*sum, sep=", ")
-sum.sort()
-print(f'Максимальное количество ягод с трёх соседних кустов = {sum[len(sum)-1]}')
-"""
+# sum = list()
+# for i in range(n):
+#     if i == 0:
+#         sum.append(list_1[n-1] + list_1[i] + list_1[i+1])
+#     elif i >=1 and i < n-1:
+#         sum.append(list_1[i-1] + list_1[i] + list_1[i+1])
+#     elif i == n-1:
+#         sum.append(list_1[i-1] + list_1[i] + list_1[0])
+# print(*sum, sep=", ")
+# sum.sort()
+# print(f'Максимальное количество ягод с трёх соседних кустов = {sum[len(sum)-1]}')
