@@ -22,6 +22,7 @@ os.system('cls')
 
 def print_operation_table(operation, num_rows, num_columns):
     for i in range (1,num_rows+1):
+        # print('\n') # совет препода, чтобы избавиться от условия ниже
         for j in range (1,num_columns+1):
             print(f'{operation(i,j)} ', end='')
             if j == num_columns:

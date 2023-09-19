@@ -16,7 +16,7 @@ os.system('cls')
 def check_poem(poem):
     vowels = ['а', 'у', 'о', 'ы', 'и', 'э', 'я', 'ю', 'ё', 'е']
     count = 0
-    for phrase in poem_1:
+    for phrase in poem:
         count_temp = 0
         for letter in phrase:
             if letter in vowels:
@@ -24,15 +24,30 @@ def check_poem(poem):
         if count == 0:
             count = count_temp
         if count_temp != count:
-            return False
-    return True
+            return 'Пам парам'
+    return 'Парам пам-пам'
 
-poem = str(input("Введите текст стихотворения = > "))
-poem_1 = poem.split()
-print(poem_1)
+poem = str(input("Введите текст стихотворения = > ")).split()
+print(check_poem(poem))
+    
+# Решение препода:
 
-if check_poem(poem_1):
-    print("Парам пам-пам")
-else:
-    print("Пам парам")
+def sum_vowels(phrase):
+    vowels_letter = 'аоэеиыуёюя'
+    k = 0
+    for letter in phrase:
+        if letter in vowels_letter:
+            k += 1
+    return k
+
+def pam_param(phrases):
+    sum_0 = sum_vowels(phrases[0])
+    for phrase_i in phrases[1:]:
+        sum_i = sum_vowels(phrase_i)
+        if sum_0 != sum_i:
+            return 'Пам парам'
+    return 'Парам пам-пам'
+
+text = input("Введите текст песни Винни-Пуха:").split()
+print(pam_param(text))
     
